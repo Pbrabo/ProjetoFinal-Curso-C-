@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Projeto.Final</name>
+    </assembly>
+    <members>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Buscar todos os produtos de forma paginada
+            </summary>
+            <remarks>
+            Não é possível retornar os produtos sem paginação
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
+            <param name="quantidade">Indica a quantidade de reistros por página. Mínimo 1 e máximo 50</param>
+            <response code="200">Retorna a lista de produtos</response>
+            <response code="204">Caso não haja produtos</response> 
+        </member>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.Obter(System.Guid)">
+            <summary>
+            Buscar um produto pelo seu Id
+            </summary>
+            <param name="idProduto">Id do produto buscado</param>
+            <response code="200">Retorna o produto filtrado</response>
+            <response code="204">Caso não haja produto com este id</response>   
+        </member>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.InserirProduto(Projeto.Final.InputModel.ProdutoInputModel)">
+            <summary>
+            Inserir um produto no catálogo
+            </summary>
+            <param name="ProdutoInputModel">Dados do jogo a ser inserido</param>
+            <response code="200">Caso o produto seja inserido com sucesso</response>
+            <response code="422">Caso já exista um produto com mesmo nome</response>  
+        </member>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.AtualizarProduto(System.Guid,Projeto.Final.InputModel.ProdutoInputModel)">
+            <summary>
+            Atualizar um produto no catálogo
+            </summary>
+            /// <param name="idProduto">Id do produto a ser atualizado</param>
+            <param name="ProdutoInputModel">Novos dados para atualizar o produto indicado</param>
+            <response code="200">Caso o produto seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um produto com este Id</response> 
+        </member>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.AtualizarProduto(System.Guid,System.Double)">
+            <summary>
+            Atualizar o preço de um produto
+            </summary>
+            /// <param name="idProduto">Id do produto a ser atualizado</param>
+            <param name="preco">Novo preço do produto</param>
+            <response code="200">Caso o preço seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um produto com este Id</response> 
+        </member>
+        <member name="M:Projeto.Final.Controllers.V1.BancoDeDadosController.ApagarProduto(System.Guid)">
+            <summary>
+            Excluir um produto
+            </summary>
+            /// <param name="idProduto">Id do produto a ser excluído</param>
+            <response code="200">Caso o preço seja atualizado com sucesso</response>
+            <response code="404">Caso não exista um produto com este Id</response>  
+        </member>
+    </members>
+</doc>
